@@ -8,7 +8,7 @@ from func import s
 app = FastAPI()
 ancient_remains_data = []
 
-# Route to upload CSV
+# uploads cv file
 @app.post("/upload-ancient-remains")
 async def upload_ancient_remains(file: UploadFile = File(...)):
     if not file.filename.endswith(".csv"):
@@ -29,7 +29,7 @@ async def upload_ancient_remains(file: UploadFile = File(...)):
 
     return JSONResponse(content={"message": "File uploaded successfully", "num_records": len(df)})
 
-# Route to generate DNA
+# route to generatee dna
 @app.get("/generate-dna")
 async def generate_dna(id: str):
     record = next((r for r in ancient_remains_data if r["id"] == id), None)
