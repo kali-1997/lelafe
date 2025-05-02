@@ -104,7 +104,7 @@ client = genai.Client(api_key="AIzaSyAXTiVxDGp6LZY3sADkAEAA600okKrr3_o")
 async def chat_with_gemini(message: str = Body(..., embed=False)):
     lower_msg = message.lower()
 
-    # Keyword-based hardcoded responses
+    # Keywordbased hardcoded responses
     if "dna generation" in lower_msg:
         return {
             "response": (
@@ -123,7 +123,7 @@ async def chat_with_gemini(message: str = Body(..., embed=False)):
             )
         }
 
-    # Otherwise, fallback to Gemini API for a general response
+    # or go to gemini model for general response
     try:
         response = client.models.generate_content(
             model="gemini-2.0-flash",
