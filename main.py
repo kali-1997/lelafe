@@ -98,7 +98,7 @@ async def compare_dna(id1: str, id2: str, length: int = 2000, k: int = 5):
 # For queries
 
 # Gemini client with your API key
-client = genai.Client(api_key="AIzaSyAXTiVxDGp6LZY3sADkAEAA600okKrr3_o")
+client = genai.Client(api_key="Enter your api key")
 
 @app.post("/chat/")
 async def chat_with_gemini(message: str = Body(..., embed=False)):
